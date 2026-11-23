@@ -1,50 +1,51 @@
-# Estudos de Java — Programação Orientada a Objetos
+# Estudos de Java — do zero à POO
 
-Seis aulas curtas (código comentado que você **roda e modifica**) e cinco exercícios com **corretor automático**. Sem Maven, sem IDE: só o JDK.
+Aulas curtas (código comentado que você **roda e modifica**), exercícios com **corretor automático** e um **simulado de prova**. Feito para estudar no **Eclipse**.
 
-## Roteiro
+## Plano de 4 dias (prova dia 27)
 
-| # | Arquivo | Conceito | Pergunta que a aula responde |
-|---|---------|----------|------------------------------|
-| 1 | [Aula1ClassesEObjetos](src/Aula1ClassesEObjetos.java) | Classe, objeto, construtor, `this`, referência | Qual a diferença entre o molde e a coisa? |
-| 2 | [Aula2Encapsulamento](src/Aula2Encapsulamento.java) | `private`, getters, validação | Como impedir que alguém estrague os dados do objeto? |
-| 3 | [Aula3Heranca](src/Aula3Heranca.java) | `extends`, `super`, `@Override`, `protected` | Como reaproveitar código entre tipos parecidos? |
-| 4 | [Aula4Polimorfismo](src/Aula4Polimorfismo.java) | Sobrescrita vs. sobrecarga, listas de tipos mistos | Como um código só funciona para vários tipos? |
-| 5 | [Aula5AbstracaoEInterfaces](src/Aula5AbstracaoEInterfaces.java) | `abstract`, `interface`, `default`, cast | Quando usar classe abstrata e quando usar interface? |
-| 6 | [Aula6ComposicaoEEquals](src/Aula6ComposicaoEEquals.java) | Composição, `equals`, `hashCode` | "É um" ou "tem um"? Quando dois objetos são iguais? |
+| Dia | O que fazer | Tempo |
+|-----|-------------|-------|
+| **23** | Básico 1, 2 e 3 → [ExerciciosBasico](src/ExerciciosBasico.java) até **7/7** | ~3 h |
+| **24** | Aulas 1, 2 e 3 (classes, encapsulamento, herança) → [Exercicios](src/Exercicios.java) 1 e 2 | ~3 h |
+| **25** | Aulas 4, 5 e 6 (polimorfismo, abstração/interface, composição) → Exercicios 3, 4 e 5 | ~3 h |
+| **26** | [SIMULADO](SIMULADO.md) **no papel**, corrigir, revisar só o que errou | ~2 h |
+| **27** | Prova. Releia só os comentários "PEGADINHA" das aulas antes de entrar. | — |
 
-Depois: [Exercicios.java](src/Exercicios.java) → soluções em [solucoes/](solucoes/Exercicios.java) (só depois de tentar!).
+Atrasou um dia? Corte a Aula 6 — é a que menos cai.
 
-## Como rodar
+## Roteiro das aulas
 
-Precisa de JDK 11 ou mais novo (`javac -version`). Na pasta do repositório:
+| Arquivo | Conteúdo |
+|---------|----------|
+| [Basico1VariaveisETipos](src/Basico1VariaveisETipos.java) | `main`, `int`/`double`/`boolean`/`char`/`String`, operadores, cast, `Scanner` |
+| [Basico2DecisoesELacos](src/Basico2DecisoesELacos.java) | `if`/`else`, `switch`, `for`, `while`, `do-while`, `break`/`continue` |
+| [Basico3ArraysStringsMetodos](src/Basico3ArraysStringsMetodos.java) | métodos, arrays, métodos de `String`, `equals`, `ArrayList` |
+| [Aula1ClassesEObjetos](src/Aula1ClassesEObjetos.java) | classe, objeto, construtor, `this`, referência |
+| [Aula2Encapsulamento](src/Aula2Encapsulamento.java) | `private`, getters, validação |
+| [Aula3Heranca](src/Aula3Heranca.java) | `extends`, `super`, `@Override`, `protected` |
+| [Aula4Polimorfismo](src/Aula4Polimorfismo.java) | sobrescrita vs. sobrecarga |
+| [Aula5AbstracaoEInterfaces](src/Aula5AbstracaoEInterfaces.java) | `abstract`, `interface`, `default`, cast |
+| [Aula6ComposicaoEEquals](src/Aula6ComposicaoEEquals.java) | composição, `equals`, `hashCode` |
 
-```powershell
-javac -encoding UTF-8 -d out src/*.java
-```
+Soluções em [solucoes/](solucoes/) — só depois de tentar.
 
-```powershell
-java -cp out Aula1ClassesEObjetos
-```
+## Como abrir no Eclipse
 
-Troque o nome da classe para rodar outra aula. Para corrigir os exercícios (recompile antes, sempre que editar):
+1. Baixe o repositório: botão verde **Code → Download ZIP** no GitHub e extraia (ou `git clone`).
+2. No Eclipse: **File → Import → General → Existing Projects into Workspace → Next**.
+3. Em **Select root directory**, escolha a pasta extraída `estudos-java` → **Finish**.
+4. Abra um arquivo em `src` (ex.: `Basico1VariaveisETipos.java`), clique com o botão direito no código → **Run As → Java Application**. A saída aparece na aba **Console**.
+5. Para os exercícios: edite `ExerciciosBasico.java` ou `Exercicios.java`, salve (**Ctrl+S**) e rode do mesmo jeito.
 
-```powershell
-javac -encoding UTF-8 -d out src/*.java; java -cp out Exercicios
-```
+A pasta `solucoes/` fica fora da compilação de propósito (tem classes com o mesmo nome dos exercícios). Para ler, é só abrir o arquivo.
 
-Saída esperada no começo: `0/5 exercícios corretos`. Seu objetivo: `5/5`.
+Atalhos úteis: **Ctrl+Shift+F** formata o código, **Ctrl+Espaço** autocompleta, digite `sysout` + **Ctrl+Espaço** para gerar `System.out.println()`, e o menu **Source → Generate Getters and Setters / Generate Constructor using Fields**.
 
-> Erro `UnsupportedClassVersionError`? Seu `java` é mais velho que seu `javac` (ex.: Java 8 no PATH). Use o `java` da mesma pasta do `javac`.
+## Como estudar (o que realmente funciona)
 
-## Como estudar
-
-1. Leia a aula de cima a baixo, **antes** de rodar adivinhe a saída de cada `println`.
-2. Rode e compare.
-3. Faça os experimentos sugeridos nos comentários (descomentar linhas que não compilam, apagar o `hashCode()`...). Ler o erro do compilador ensina muito.
-4. Faça o exercício da aula. Travou? Releia a aula. Ainda travou? Compare com a solução:
-   `git diff --no-index src/Exercicios.java solucoes/Exercicios.java`
-
-## Próximos passos
-
-Quando chegar em 5/5: crie seu próprio mini-sistema (biblioteca, estacionamento, loja) usando as 6 ideias juntas, depois estude coleções (`List`, `Map`), exceções próprias e testes com JUnit.
+1. **Antes** de rodar uma aula, adivinhe a saída de cada `println`. Depois rode e compare. Errou? É ali que você aprende.
+2. Faça os experimentos dos comentários (descomentar linhas que não compilam etc.). Ler o erro do compilador ensina muito.
+3. Os exercícios são o principal. Se travar mais de 15 min, releia a aula; se continuar, olhe a solução, **apague** e escreva de novo sozinho.
+4. Na prova você escreve **no papel**: no simulado, nada de Eclipse.
+5. Cole seu código no chat com o Claude e peça uma revisão — passar no corretor não quer dizer que está bem escrito.

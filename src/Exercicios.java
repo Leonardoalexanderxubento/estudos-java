@@ -177,6 +177,5 @@ public class Exercicios {
             }
         }
         System.out.println(ok + "/" + exercicios.length + " exercícios corretos");
-        if (ok < exercicios.length) System.exit(1);
     }
 }
